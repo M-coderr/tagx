@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TagX — Custom Hang Tags, Labels & Garment Packaging</title>
+<meta name="description" content="TagX manufactures custom hang tags, visiting cards, woven labels, satin labels, stickers, and PVC pouches for apparel brands across India.">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.tagx.in/">
+<meta property="og:title" content="TagX | Custom Garment Trims & Packaging">
+<meta property="og:description" content="Custom hang tags, woven labels, satin labels, stickers, and packaging, manufactured in Ahmedabad for apparel brands across India.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1616082498261-02685957b445?auto=format&fit=crop&w=1200&q=80">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23C94F3D'/%3E%3Ctext x='50' y='66' font-size='60' text-anchor='middle' fill='%23fff' font-family='Arial, sans-serif'%3EX%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1C1A17;
+    --paper: #FAF7F1;
+    --kraft-light: #E8E2D4;
+    --kraft: #8A8275;
+    --red: #C94F3D;
+    --pine: #2F4A3C;
+    --red-dim: #c94f3d33;
+    --pine-dim: #2f4a3c1f;
+
+    --mustard: #D9A526;
+    --mustard-dim: #d9a52622;
+    --denim: #3B5A78;
+    --denim-dim: #3b5a7822;
+    --blush: #C97A8C;
+    --blush-dim: #c97a8c22;
+
+    --font-display: 'Archivo', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --max-width: 1180px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 92px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-image: radial-gradient(circle at 1px 1px, rgba(28,26,23,0.035) 1px, transparent 0);
+    background-size: 22px 22px;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  :focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+
+  .wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 32px; }
+
+  /* ---------- Eyebrow tag label ---------- */
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--pine); background: var(--pine-dim);
+    border: 1px solid var(--pine); padding: 5px 12px 5px 10px; border-radius: 3px; margin-bottom: 20px;
+  }
+  .eyebrow.eb-red { color: var(--red); background: var(--red-dim); border-color: var(--red); }
+  .eyebrow.eb-mustard { color: #8A6510; background: var(--mustard-dim); border-color: var(--mustard); }
+  .eyebrow.eb-denim { color: var(--denim); background: var(--denim-dim); border-color: var(--denim); }
+  .eyebrow.eb-blush { color: #9C4F61; background: var(--blush-dim); border-color: var(--blush); }
+  .hero .eyebrow {
+    color: var(--ink);
+    background: rgba(250, 247, 241, 0.95);
+    border: 1px solid rgba(28, 26, 23, 0.08);
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 2px 12px rgba(28, 26, 23, 0.06);
+  }
+  .hero .eyebrow::before {
+    content: '';
+    width: 4px;
+    height: 18px;
+    border-radius: 999px;
+    background: var(--red);
+    margin-right: 10px;
+  }
+  .eyebrow.eb-red::before { background: var(--red); }
+  .eyebrow.eb-mustard::before { background: var(--mustard); }
+  .eyebrow.eb-denim::before { background: var(--denim); }
+  .eyebrow.eb-blush::before { background: var(--blush); }
+  .eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--pine); flex-shrink: 0; }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250, 247, 241, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(28,26,23,0.1);
+  }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .logo { font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: -0.01em; display: flex; align-items: baseline; gap: 2px; }
+  .logo span { color: var(--red); }
+
+  nav { margin-left: auto; display: flex; align-items: center; }
+  nav ul { list-style: none; display: flex; gap: 36px; align-items: center; justify-content: flex-end; }
+  nav a { font-size: 14px; font-weight: 500; color: var(--ink); position: relative; padding: 4px 0; }
+  nav a::after {
+    content: ''; position: absolute; left: 0; bottom: -2px; width: 0; height: 2px; background: var(--red); transition: width 0.2s ease;
+  }
+  nav a:hover::after { width: 100%; }
+
+  .nav-cta { background: var(--ink); color: var(--paper) !important; padding: 10px 20px; border-radius: 3px; font-weight: 600; font-size: 14px; }
+  .nav-cta::after { display: none; }
+  .nav-cta:hover { background: var(--red); }
+
+  .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+  .menu-toggle svg { width: 28px; height: 28px; stroke: var(--ink); }
+  nav { margin-left: auto; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 88px 0 96px; overflow: visible; }
+  .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center; }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    max-width: none;
+    color: var(--ink);
+  }
+  .hero h1 .hero-line { display: block; white-space: nowrap; }
+  .hero h1 .hero-accent {
+    display: inline;
+    color: var(--red);
+    letter-spacing: -0.01em;
+  }
+  .hero p.lede { margin-top: 24px; font-size: 18px; color: #4A453E; max-width: 480px; line-height: 1.6; }
+  .hero-ctas { margin-top: 36px; display: flex; gap: 16px; flex-wrap: wrap; }
+  
+  .btn-primary {
+    background: var(--red); color: var(--paper); font-weight: 600; font-size: 15px; padding: 15px 28px;
+    border-radius: 3px; border: none; cursor: pointer; transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .btn-primary:hover { background: #B23E2E; transform: translateY(-1px); }
+
+  .btn-secondary {
+    background: transparent; color: var(--ink); font-weight: 600; font-size: 15px; padding: 15px 24px;
+    border-radius: 3px; border: 1.5px solid var(--ink); cursor: pointer; transition: all 0.15s ease;
+  }
+  .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+
+  /* ---------- WhatsApp ---------- */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.08);
+  }
+  .whatsapp-float svg {
+    width: 32px;
+    height: 32px;
+    fill: currentColor;
+  }
+
+  .btn-whatsapp {
+    background: #25D366; color: #fff; font-weight: 600; font-size: 15px; padding: 15px 28px;
+    border-radius: 3px; border: none; cursor: pointer; transition: background 0.15s ease, transform 0.15s ease;
+    display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+  }
+  .btn-whatsapp:hover { background: #1FB855; transform: translateY(-1px); }
+  .btn-whatsapp svg { width: 18px; height: 18px; fill: #fff; }
+
+  .hero-stats { margin-top: 56px; display: flex; gap: 40px; }
+  .stat-num { font-family: var(--font-mono); font-size: 26px; font-weight: 500; color: var(--black); }
+  .stat-label { font-size: 12px; color: var(--kraft); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+
+  /* ---------- The tag stack (signature element) ---------- */
+  .tag-stage { position: relative; height: 460px; display: flex; align-items: center; justify-content: center; }
+  .tag-fan { position: relative; width: 240px; height: 320px; }
+  .fan-card {
+    position: absolute; top: 0; left: 0; width: 200px; height: 290px;
+    border-radius: 10px 10px 26px 10px;
+    display: flex; flex-direction: column; align-items: center; padding: 22px 18px;
+    transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.7s ease, box-shadow 0.5s ease;
+    will-change: transform, opacity;
+  }
+
+  /* Stack order: each card sits slightly behind/below the one in front, peeking out */
+  .fan-card.is-stack-0 { transform: translate(20px, 0px) rotate(0deg) scale(1); z-index: 4; opacity: 1; }
+  .fan-card.is-stack-1 { transform: translate(32px, 10px) rotate(2deg) scale(0.97); z-index: 3; opacity: 1; }
+  .fan-card.is-stack-2 { transform: translate(44px, 20px) rotate(4deg) scale(0.94); z-index: 2; opacity: 1; }
+  .fan-card.is-stack-3 { transform: translate(56px, 30px) rotate(6deg) scale(0.91); z-index: 1; opacity: 0.92; }
+
+  /* When the front card is dismissed during cycling, it slides away and fades */
+  .fan-card.is-leaving { transform: translate(-90px, -34px) rotate(-16deg) scale(0.96); opacity: 0; z-index: 5; }
+
+  /* Inner elements automatically inherit contrast color */
+  .fan-hole { width: 14px; height: 14px; border-radius: 50%; background: var(--paper); border: 2px solid rgba(0,0,0,0.15); box-shadow: inset 0 2px 4px rgba(0,0,0,0.2); flex-shrink: 0; }
+  .fan-card .fan-corner-mark { position: absolute; top: 12px; right: 12px; width: 14px; height: 14px; opacity: 0.4; }
+  .fan-card .fan-corner-mark svg { width: 100%; height: 100%; stroke: currentColor; }
+
+  .fan-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: inherit; opacity: 0.8; margin-top: 18px; }
+  .fan-name { font-family: var(--font-display); font-weight: 700; font-size: 18px; margin-top: 8px; text-align: center; color: inherit; line-height: 1.25; }
+  .fan-rule { width: 50%; height: 1px; background: currentColor; opacity: 0.2; margin: 16px 0; }
+  .fan-icon { width: 42px; height: 42px; margin-top: auto; opacity: 0.7; stroke: currentColor; }
+  .fan-sku { font-family: var(--font-mono); font-size: 9px; color: inherit; opacity: 0.6; margin-top: 12px; letter-spacing: 0.05em; }
+
+  .fan-card.c1 {
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.5), transparent 55%),
+      radial-gradient(circle at 12% 18%, rgba(28,26,23,0.05) 0, transparent 3%),
+      radial-gradient(circle at 78% 32%, rgba(28,26,23,0.04) 0, transparent 2.4%),
+      radial-gradient(circle at 36% 64%, rgba(28,26,23,0.05) 0, transparent 2.8%),
+      radial-gradient(circle at 64% 82%, rgba(28,26,23,0.04) 0, transparent 2.2%),
+      linear-gradient(165deg, #FCFAF5 0%, #F3EEE2 100%);
+    border: 1.5px solid rgba(28,26,23,0.16);
+    box-shadow: 8px 16px 30px rgba(28,26,23,0.22), inset 0 1px 2px rgba(255,255,255,0.7);
+  }
+  .fan-card.c1 .fan-name--brand { text-shadow: 0 1px 0 rgba(255,255,255,0.8), 0 -1px 1px rgba(28,26,23,0.18); }
+  .fan-card.c1 .fan-product-list { list-style: none; margin-top: 14px; width: 100%; display: flex; flex-direction: column; gap: 9px; }
+  .fan-card.c1 .fan-product-list li {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.03em; color: #4A453E;
+    display: flex; align-items: center; gap: 7px;
+  }
+  .fan-card.c1 .fan-product-list li::before {
+    content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--red); flex-shrink: 0;
+  }
+  .fan-card.c1 .fan-product-list li:nth-child(2)::before { background: var(--denim); }
+  .fan-card.c1 .fan-product-list li:nth-child(3)::before { background: var(--mustard); }
+
+  .fan-card.c2 {
+    background:
+      radial-gradient(circle at 18% 22%, rgba(70,55,35,0.12) 0, transparent 1.8%),
+      radial-gradient(circle at 64% 14%, rgba(70,55,35,0.10) 0, transparent 1.4%),
+      radial-gradient(circle at 86% 30%, rgba(70,55,35,0.09) 0, transparent 1.6%),
+      radial-gradient(circle at 36% 40%, rgba(70,55,35,0.11) 0, transparent 1.7%),
+      radial-gradient(circle at 8% 52%, rgba(70,55,35,0.09) 0, transparent 1.5%),
+      radial-gradient(circle at 72% 58%, rgba(70,55,35,0.1) 0, transparent 1.8%),
+      radial-gradient(circle at 48% 70%, rgba(70,55,35,0.09) 0, transparent 1.5%),
+      radial-gradient(circle at 22% 84%, rgba(70,55,35,0.11) 0, transparent 1.7%),
+      radial-gradient(circle at 90% 86%, rgba(70,55,35,0.08) 0, transparent 1.4%),
+      radial-gradient(circle at 58% 92%, rgba(70,55,35,0.09) 0, transparent 1.6%),
+      linear-gradient(150deg, #CDBC9A 0%, #BCA37A 45%, #AD9168 100%);
+    border: 1.5px solid rgba(90,70,45,0.42);
+    box-shadow:
+      6px 12px 22px rgba(28,26,23,0.2),
+      inset 0 2px 2px rgba(255,255,255,0.35),
+      inset 0 -3px 5px rgba(60,44,24,0.25),
+      inset 2px 0 3px rgba(255,255,255,0.12),
+      inset -2px 0 3px rgba(60,44,24,0.12);
+  }
+  .fan-card.c2::before {
+    content: '';
+    position: absolute;
+    top: 8px; left: 8px; right: 8px; bottom: 8px;
+    border-radius: 6px 6px 20px 6px;
+    pointer-events: none;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.4),
+      inset 0 -1px 1px rgba(60,44,24,0.3),
+      0 1px 0 rgba(255,255,255,0.25),
+      0 -1px 1px rgba(60,44,24,0.18);
+  }
+  .fan-card.c2 .fan-label { color: #4A3620; }
+  .fan-card.c2 .fan-name {
+    color: #3D2B16;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.45), 0 -1px 1px rgba(60,44,24,0.35);
+  }
+  .fan-card.c2 .fan-rule {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(60,44,24,0.3) 20%, rgba(60,44,24,0.3) 80%, transparent);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.35);
+  }
+  .fan-card.c2 .fan-icon { color: #4A3620; filter: drop-shadow(0 1px 0 rgba(255,255,255,0.3)); }
+  .fan-card.c2 .fan-sku { color: #6B5234; }
+
+  .fan-card.c3 {
+    background:
+      radial-gradient(circle at 30% 20%, rgba(255,255,255,0.05), transparent 60%),
+      linear-gradient(160deg, #211C16 0%, #1A1611 60%, #14110D 100%);
+    border: 1.5px solid rgba(217,165,38,0.3);
+    box-shadow: 6px 12px 22px rgba(28,26,23,0.2), inset 0 1px 1px rgba(255,255,255,0.06);
+  }
+  .fan-card.c3 .fan-foil-text {
+    background: linear-gradient(115deg, #8a6a1f 0%, #f2d685 22%, #d9a526 38%, #fff3c9 50%, #d9a526 62%, #8a6a1f 80%, #f2d685 94%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 1px 0 rgba(0,0,0,0.4));
+  }
+  .fan-card.c3 .fan-rule { background: linear-gradient(90deg, transparent, rgba(217,165,38,0.55), transparent); height: 1px; }
+  .fan-card.c3 .fan-label, .fan-card.c3 .fan-sku { color: rgba(217,165,38,0.55); }
+  .fan-card.c3 .fan-hole { background: #14110D; border-color: rgba(217,165,38,0.4); box-shadow: inset 0 2px 4px rgba(0,0,0,0.6), 0 0 0 1px rgba(217,165,38,0.15); }
+  .fan-card.c3 svg.fan-icon { stroke: #D9A526; opacity: 0.8; filter: drop-shadow(0 0 3px rgba(217,165,38,0.3)); }
+
+  .fan-card.c4 {
+    background:
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.10) 0px, rgba(255,255,255,0.10) 1px, transparent 1px, transparent 3px),
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.08) 0px, rgba(0,0,0,0.08) 1px, transparent 1px, transparent 3px),
+      linear-gradient(155deg, #241737 0%, #321F55 35%, #1B103F 70%, #291C53 100%);
+    border: 1.5px solid rgba(70,35,110,0.45);
+    box-shadow: 6px 12px 22px rgba(28,26,23,0.18), inset 0 0 30px rgba(0,0,0,0.18), inset 0 1px 1px rgba(255,255,255,0.18);
+  }
+  .fan-deboss-ring {
+    margin-top: auto;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(150deg, rgba(60,44,24,0.06), rgba(255,255,255,0.18));
+    box-shadow:
+      inset 0 2px 3px rgba(60,44,24,0.32),
+      inset 0 -1px 2px rgba(255,255,255,0.45),
+      0 1px 0 rgba(255,255,255,0.3);
+  }
+  .fan-deboss-ring .fan-icon { width: 26px; height: 26px; margin-top: 0; opacity: 0.8; }
+
+  .fan-hole { width: 14px; height: 14px; border-radius: 50%; background: var(--paper); border: 2px solid rgba(28,26,23,0.25); box-shadow: inset 0 2px 3px rgba(0,0,0,0.15); flex-shrink: 0; }
+  .fan-card.c1 .fan-hole { background: var(--kraft-light); }
+  .fan-card.c2 .fan-hole { background: #E4D7BC; border-color: rgba(90,70,45,0.4); }
+  .fan-card.c3 .fan-hole { background: #14110D; border-color: rgba(217,165,38,0.4); box-shadow: inset 0 2px 4px rgba(0,0,0,0.6), 0 0 0 1px rgba(217,165,38,0.15); }
+  .fan-card.c4 .fan-hole { background: rgba(255,255,255,0.85); border-color: rgba(50,15,25,0.4); }
+
+  .fan-card .fan-corner-mark { position: absolute; top: 10px; right: 10px; width: 14px; height: 14px; opacity: 0.4; color: var(--ink); }
+  .fan-card.c3 .fan-corner-mark, .fan-card.c4 .fan-corner-mark { color: rgba(255,255,255,0.5); opacity: 0.55; }
+  .fan-card.c2 .fan-corner-mark { color: #5A4429; }
+  .fan-card .fan-corner-mark svg { width: 100%; height: 100%; }
+
+  .fan-label { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--kraft); margin-top: 16px; }
+  .fan-card.c4 .fan-label { color: rgba(255,255,255,0.7); }
+  .fan-name { font-family: var(--font-display); font-weight: 700; font-size: 16px; margin-top: 6px; text-align: center; color: var(--ink); line-height: 1.25; }
+  .fan-card.c4 .fan-name { color: #fff; }
+  .fan-name--brand { font-size: 18px; margin-top: 8px; }
+  .fan-name--subtle { color: var(--red); }
+  .fan-rule { width: 50%; height: 1px; background: rgba(28,26,23,0.2); margin: 14px 0; }
+  .fan-card.c4 .fan-rule { background: rgba(255,255,255,0.3); }
+  .fan-icon { width: 38px; height: 38px; margin-top: auto; opacity: 0.55; color: var(--ink); }
+  .fan-icon--spaced { margin-top: auto; }
+  .fan-card.c4 .fan-icon { color: rgba(255,255,255,0.75); opacity: 0.85; }
+  .fan-label--center { text-align: center; }
+  .fan-sku { font-family: var(--font-mono); font-size: 8.5px; color: var(--kraft); margin-top: 10px; letter-spacing: 0.05em; }
+  .fan-card.c4 .fan-sku { color: rgba(255,255,255,0.55); }
+
+  /* ---------- Section heading pattern ---------- */
+  .section { padding: 96px 0; }
+  .section-head { max-width: 620px; margin-bottom: 56px; }
+  .section-head h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(36px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; }
+  .section-head p { margin-top: 14px; font-size: 16px; color: #4A453E; }
+  .section-alt { background: var(--kraft-light); }
+
+  /* ---------- About ---------- */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .about-grid p { font-size: 16px; color: #3A352F; margin-bottom: 18px; }
+  .about-list { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+  .about-list li { display: flex; gap: 14px; align-items: flex-start; font-size: 15px; color: #3A352F; }
+  .about-list .mark { font-family: var(--font-mono); font-size: 13px; color: var(--red); font-weight: 500; flex-shrink: 0; margin-top: 1px; }
+  .about-list .mark.m2 { color: var(--mustard); }
+  .about-list .mark.m3 { color: var(--denim); }
+  .about-list .mark.m4 { color: var(--pine); }
+  .about-list .mark.m5 { color: var(--blush); }
+
+  /* ---------- Capabilities ---------- */
+  .cap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(28,26,23,0.12); border: 1px solid rgba(28,26,23,0.12); }
+  .cap-card { background: var(--paper); padding: 36px 32px; }
+  .cap-icon { width: 44px; height: 44px; border-radius: 3px; background: var(--pine-dim); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+  .cap-icon svg { width: 22px; height: 22px; stroke: var(--pine); }
+  .cap-icon.i-red { background: var(--red-dim); }
+  .cap-icon.i-red svg { stroke: var(--red); }
+  .cap-icon.i-mustard { background: var(--mustard-dim); }
+  .cap-icon.i-mustard svg { stroke: var(--mustard); }
+  .cap-icon.i-denim { background: var(--denim-dim); }
+  .cap-icon.i-denim svg { stroke: var(--denim); }
+  .cap-icon.i-blush { background: var(--blush-dim); }
+  .cap-icon.i-blush svg { stroke: var(--blush); }
+  .cap-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 18px; margin-bottom: 10px; }
+  .cap-card p { font-size: 14.5px; color: #4A453E; line-height: 1.6; }
+  .cap-tags { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .cap-tag { font-family: var(--font-mono); font-size: 11px; color: var(--kraft); border: 1px solid rgba(28,26,23,0.18); padding: 3px 8px; border-radius: 3px; }
+
+  /* ---------- Products / Catalog (category carousels) ---------- */
+  .category-section {
+    margin-bottom: 44px;
+  }
+  .category-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .category-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .category-head h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--ink);
+  }
+
+  .category-count {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--kraft);
+    white-space: nowrap;
+  }
+
+  .category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 12px 8px;
+    margin-bottom: 20px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 999px;
+  }
+
+  .category-tab {
+    appearance: none;
+    border: none;
+    background: rgba(255,255,255,0.14);
+    color: #f5f4f1;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+  }
+
+  .category-tab:hover {
+    transform: translateY(-1px);
+    background: rgba(255,255,255,0.22);
+  }
+
+  .category-tab.active {
+    background: #fff;
+    color: #111;
+    box-shadow: 0 14px 38px rgba(0,0,0,0.16);
+  }
+
+  .gallery-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .gallery-filter-btn {
+    appearance: none;
+    border: 1px solid rgba(28,26,23,0.14);
+    background: #fff;
+    color: #1c1a17;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .gallery-filter-btn:hover {
+    transform: translateY(-1px);
+    background: #f5f2ed;
+    border-color: rgba(28,26,23,0.28);
+  }
+
+  .gallery-filter-btn.active {
+    background: var(--ink);
+    color: #fff;
+    border-color: var(--ink);
+    box-shadow: 0 14px 38px rgba(0,0,0,0.12);
+  }
+
+  .category-section.product-panel {
+    background: #fff;
+    border-radius: 10px;
+    padding: 24px;
+    border: 1px solid rgba(28,26,23,0.08);
+  }
+
+  .carousel {
+    position: relative;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 6px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .carousel-track::-webkit-scrollbar { display: none; }
+
+  .carousel-nav {
+    position: absolute;
+    top: 38%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 1.5px solid rgba(28,26,23,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    box-shadow: 0 4px 14px rgba(28,26,23,0.12);
+    transition: background 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
+  }
+  .carousel-nav:hover { background: var(--ink); border-color: var(--ink); }
+  .carousel-nav:hover svg { stroke: #fff; }
+  .carousel-nav svg { width: 18px; height: 18px; stroke: var(--ink); transition: stroke 0.15s ease; }
+  .carousel-nav.prev { left: -16px; }
+  .carousel-nav.next { right: -16px; }
+  .carousel-nav[disabled] { opacity: 0; pointer-events: none; }
+
+  @media (max-width: 720px) {
+    .carousel-nav { display: none; }
+  }
+
+  .product-card {
+    flex: 0 0 240px;
+    scroll-snap-align: start;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e8e4de;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.10);
+  }
+
+  .product-swatch {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: #f5f2ed;
+  }
+
+  .product-swatch img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+  }
+
+  .product-card:hover .product-swatch img {
+    transform: scale(1.04);
+  }
+
+  .product-body {
+    padding: 16px 18px 18px;
+  }
+
+  .product-body h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    color: #1a1a1a;
+  }
+
+  .product-body p {
+    font-size: 13px;
+    color: #6b6460;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .product-card.skeleton {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .product-card.skeleton .product-swatch {
+    aspect-ratio: 4/3;
+    background: linear-gradient(90deg, #ede9e3 25%, #f5f2ed 50%, #ede9e3 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s infinite;
+  }
+
+  .product-card.skeleton::after {
+    content: '';
+    display: block;
+    height: 56px;
+    margin: 16px 18px 18px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #ede9e3 25%, #f5f2ed 50%, #ede9e3 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s infinite;
+  }
+
+  @keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .gallery-error {
+    text-align: center;
+    padding: 3rem 0;
+    color: #6b6460;
+    font-size: 15px;
+  }
+
+  .lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    z-index: 1000;
+  }
+
+  .tagx-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1001;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .lightbox-overlay.open,
+  .tagx-lightbox.open {
+    display: flex;
+  }
+
+  .lightbox-img-wrap {
+    max-width: 860px;
+    width: 100%;
+    max-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox-img-wrap img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+  }
+
+  .lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: #fff;
+    font-size: 28px;
+    line-height: 1;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .lightbox-close:hover { background: rgba(255,255,255,0.3); }
+
+  .lightbox-prev,
+  .lightbox-next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: #fff;
+    font-size: 22px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .lightbox-prev { left: 16px; }
+  .lightbox-next { right: 16px; }
+  .lightbox-prev:hover,
+  .lightbox-next:hover { background: rgba(255,255,255,0.3); }
+
+  .lightbox-caption {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 14px;
+    background: rgba(0,0,0,0.45);
+    padding: 6px 18px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 600px) {
+    .product-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .lightbox-prev { left: 6px; }
+    .lightbox-next { right: 6px; }
+  }
+
+  /* ---------- Process strip ---------- */
+  .process-strip { display: flex; border-bottom: 1px solid rgba(28,26,23,0.15); }
+  .process-step { flex: 1; padding: 28px 24px; border-right: 1px solid rgba(28,26,23,0.15); border-top: 3px solid var(--red); }
+  .process-step:last-child { border-right: none; }
+  .process-step.ps-2 { border-top-color: var(--mustard); }
+  .process-step.ps-3 { border-top-color: var(--denim); }
+  .process-step.ps-4 { border-top-color: var(--pine); }
+  .process-step .p-label { font-family: var(--font-mono); font-size: 11px; color: var(--red); letter-spacing: 0.05em; text-transform: uppercase; }
+  .process-step.ps-2 .p-label { color: var(--mustard); }
+  .process-step.ps-3 .p-label { color: var(--denim); }
+  .process-step.ps-4 .p-label { color: var(--pine); }
+  .process-step h4 { font-family: var(--font-display); font-size: 16px; font-weight: 700; margin-top: 8px; }
+
+  .about-heading { font-family: var(--font-display); font-weight: 800; font-size: clamp(36px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 18px; }
+  .fan-name--brand { font-size: 20px; margin-top: 8px; }
+  .fan-name--subtle { opacity: 0.7; }
+  .fan-label--center { text-align: center; }
+  .fan-icon--spaced { margin-top: 16px; }
+
+  /* ---------- Contact ---------- */
+  .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; }
+  .contact-info h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(36px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 16px; }
+  .contact-info p { font-size: 16px; color: #4A453E; margin-bottom: 32px; max-width: 420px; }
+  .contact-detail { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 22px; }
+  .contact-detail .ci-icon { width: 36px; height: 36px; border-radius: 50%; background: var(--pine-dim); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .contact-detail .ci-icon svg { width: 16px; height: 16px; stroke: var(--pine); }
+  .contact-detail .ci-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--kraft); margin-bottom: 2px; }
+  .contact-detail .ci-value { font-size: 15px; font-weight: 500; }
+
+  .form-card { background: var(--paper); border: 1.5px solid rgba(28,26,23,0.15); border-radius: 8px; padding: 40px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .field { margin-bottom: 18px; }
+  .field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 7px; }
+  .field input, .field select, .field textarea { width: 100%; padding: 12px 14px; border: 1.5px solid rgba(28,26,23,0.2); border-radius: 4px; background: var(--paper); font-family: var(--font-body); font-size: 14.5px; color: var(--ink); transition: border-color 0.15s ease; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--pine); }
+  .field textarea { resize: vertical; min-height: 96px; }
+  .form-card .btn-primary { width: 100%; margin-top: 6px; }
+  .form-note { font-size: 12.5px; color: var(--kraft); margin-top: 14px; text-align: center; }
+
+  /* ---------- Footer ---------- */
+  footer { background: var(--ink); color: var(--paper); padding: 0 0 32px; }
+  .footer-accent-strip { display: flex; height: 6px; }
+  .footer-accent-strip span { flex: 1; }
+  footer .footer-top-padding { padding-top: 56px; }
+  .footer-top { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 40px; border-bottom: 1px solid rgba(250,247,241,0.15); }
+  .footer-logo { font-family: var(--font-display); font-weight: 800; font-size: 22px; }
+  .footer-logo span { color: var(--red); }
+  .footer-tag { font-size: 13px; color: rgba(250,247,241,0.5); margin-top: 8px; max-width: 280px; }
+  .footer-cols { display: flex; gap: 64px; }
+  .footer-col h5 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(250,247,241,0.45); margin-bottom: 14px; }
+  .footer-col a, .footer-col p { display: block; font-size: 14px; color: rgba(250,247,241,0.85); margin-bottom: 10px; }
+  .footer-bottom { padding-top: 24px; display: flex; justify-content: space-between; font-size: 12.5px; color: rgba(250,247,241,0.4); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px) {
+    .menu-toggle { display: block; margin-left: auto; }
+    nav { margin-left: 0; display: flex; }
+    nav ul { 
+        display: flex; flex-direction: column; position: absolute; top: 76px; left: 0; width: 100%; 
+        background: rgba(250, 247, 241, 0.98); backdrop-filter: blur(8px); padding: 24px 32px; 
+        border-bottom: 1px solid rgba(28,26,23,0.1); box-shadow: 0 10px 20px rgba(0,0,0,0.05); align-items: flex-start;
+    }
+    body.js nav ul { display: none; }
+    body.js nav ul.active { display: flex; }
+    .hero .wrap { grid-template-columns: 1fr; }
+    .tag-stage { height: 340px; margin-top: 12px; }
+    .tag-fan { transform: scale(0.82); }
+    .about-grid { grid-template-columns: 1fr; gap: 36px; }
+    .cap-grid { grid-template-columns: 1fr; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-strip { flex-direction: column; }
+    .process-step { border-right: none; border-bottom: 1px solid rgba(28,26,23,0.15); }
+    .process-step:last-child { border-bottom: none; }
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-top { flex-direction: column; gap: 32px; }
+    .footer-cols { gap: 40px; }
+  }
+  @media (max-width: 560px) {
+    .wrap { padding: 0 20px; }
+    .hero { padding: 56px 0 64px; }
+    .hero h1 { font-size: clamp(26px, 8vw, 40px); }
+    .hero-stats { gap: 24px; flex-wrap: wrap; }
+    .tag-fan { transform: scale(0.68); }
+    .tag-stage { height: 280px; }
+    .product-grid { grid-template-columns: 1fr; }
+    .section { padding: 64px 0; }
+    .form-card { padding: 28px 22px; }
+    .footer-cols { flex-direction: column; gap: 24px; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="TagX Home">Tag<span>X</span></a>
+    <button type="button" class="menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#products">Catalogue</a></li>
+        <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <!-- <span class="eyebrow eb-red">Garment Trim Manufacturer</span> -->
+        <h1><span class="hero-line">Tags that hang right.</span><span class="hero-line">Labels that <span class="hero-accent">stay on.</span></span></h1>
+        <p class="lede">Premium garment trims manufactured in-house — hang tags, woven labels, PU labels and packaging with luxury finishes.</p>
+        <div class="hero-ctas">
+          <a class="btn-primary" href="#contact">Request a Quote</a>
+          <a class="btn-secondary" href="#products">View Catalogue</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num">700+</div>
+            <div class="stat-label">Brands Served</div>
+          </div>
+          <div>
+            <div class="stat-num">10,000+</div>
+            <div class="stat-label">Orders Delivered</div>
+          </div>
+          <div>
+            <div class="stat-num">48hr</div>
+            <div class="stat-label">Sample Turnaround</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tag-stage" id="tagStage" aria-hidden="true">
+        <div class="tag-fan" id="tagFan">
+          <div class="fan-card c1">
+            <div class="fan-corner-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg>
+            </div>
+            <div class="fan-hole"></div>
+            <div class="fan-name fan-name--brand">Tag<span class="fan-name--subtle">X</span></div>
+            <div class="fan-rule"></div>
+            <ul class="fan-product-list">
+              <li>Hang Tags</li>
+              <li>Woven Labels</li>
+              <li>Satin Labels</li>
+            </ul>
+            <div class="fan-sku">tagx.in</div>
+          </div>
+          <div class="fan-card c2">
+            <div class="fan-corner-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg>
+            </div>
+            <div class="fan-hole"></div>
+            <div class="fan-label">.</div>
+            <div class="fan-name">Kraft<br>Embossed</div>
+            <div class="fan-rule"></div>
+            <div class="fan-deboss-ring">
+              <svg class="fan-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 2 12l10 10 10-10L12 2Z"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <div class="fan-sku">SKU 8841 209 K</div>
+          </div>
+          <div class="fan-card c3">
+            <div class="fan-corner-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg>
+            </div>
+            <div class="fan-hole"></div>
+            <div class="fan-label">Foil Stamp</div>
+            <div class="fan-name fan-foil-text">Premium<br>Tag</div>
+            <div class="fan-rule"></div>
+            <svg class="fan-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h12"/></svg>
+            <div class="fan-sku">SKU 8841 209 F</div>
+          </div>
+          <div class="fan-card c4">
+            <div class="fan-corner-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg>
+            </div>
+            <div class="fan-hole"></div>
+            <div class="fan-label">Woven</div>
+            <div class="fan-name">Damask<br>Label</div>
+            <div class="fan-rule"></div>
+            <svg class="fan-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="9" width="18" height="6" rx="1"/><path d="M3 12h18"/></svg>
+            <div class="fan-sku">100% Cotton</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="capabilities">
+    <div class="wrap">
+      <div class="section-head">
+        <!-- <span class="eyebrow eb-mustard">Print & Finish</span> -->
+        <h2>What we manufacture</h2>
+        <p>Every product below is produced to spec — your dimensions, stock, finish, and attachment method.</p>
+      </div>
+
+      <div class="cap-grid">
+        <div class="cap-card">
+          <div class="cap-icon i-red" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 12l10 10 10-10L12 2Z"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <h3>Hang Tags</h3>
+          <p>Die-cut card tags in kraft, art board, or recycled stock — with string, safety pin, or plastic fastener attachment.</p>
+          <div class="cap-tags">
+            <span class="cap-tag">KRAFT</span>
+            <span class="cap-tag">DIE-CUT</span>
+            <span class="cap-tag">FOIL</span>
+          </div>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon i-red" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 12h18M3 17h12"/></svg>
+          </div>
+          <h3>Satin Labels</h3>
+          <p>Soft, smooth, and vibrant printed labels perfect for inner garment care, sizing, and branding.</p>
+          <div class="cap-tags">
+            <span class="cap-tag">PRINTED</span>
+            <span class="cap-tag">SOFT-TOUCH</span>
+          </div>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon i-red" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
+          </div>
+          <h3>Woven Labels</h3>
+          <p>Damask and woven labels for neck, waistband, and brand placement — fine detail at high thread density.</p>
+          <div class="cap-tags">
+            <span class="cap-tag">DAMASK</span>
+            <span class="cap-tag">HIGH-DENSITY</span>
+          </div>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon i-red" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8h6M12 12h6M12 16h3M9 8h.01M9 12h.01M9 16h.01"/></svg>
+          </div>
+          <h3>PU Labels</h3>
+          <p>Polyurethane labels combining durability and flexibility for waistbands, care labels, and brand placement.</p>
+          <div class="cap-tags">
+            <span class="cap-tag">DURABLE</span>
+            <span class="cap-tag">FLEXIBLE</span>
+            <span class="cap-tag">CUSTOM</span>
+          </div>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon i-red" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M7 12h10M12 7v10"/></svg>
+          </div>
+          <h3>Stickers</h3>
+          <p>Custom-printed adhesive stickers for product branding, packaging seals, and decorative application on garments.</p>
+          <div class="cap-tags">
+            <span class="cap-tag">ADHESIVE</span>
+            <span class="cap-tag">VINYL</span>
+            <span class="cap-tag">WATERPROOF</span>
+          </div>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon i-red" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8l7-5 7 5M5 8v9l7 5 7-5V8"/></svg>
+          </div>
+          <h3>PVC Pouches</h3>
+          <p>Flexible, clear, and custom-branded pouches designed for premium, retail-ready packaging.</p>
+          <div class="cap-tags">
+            <span class="cap-tag">CLEAR/FROSTED</span>
+            <span class="cap-tag">ZIP-LOCK</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="wrap process-wrap">
+      <div class="process-strip">
+        <div class="process-step">
+          <div class="p-label">Step</div>
+          <h4>Design & Sampling</h4>
+        </div>
+        <div class="process-step ps-2">
+          <div class="p-label">Step</div>
+          <h4>Material Sourcing</h4>
+        </div>
+        <div class="process-step ps-3">
+          <div class="p-label">Step</div>
+          <h4>Print & Finish</h4>
+        </div>
+        <div class="process-step ps-4">
+          <div class="p-label">Step</div>
+          <h4>QC & Dispatch</h4>
+        </div>
+      </div>
+    </div> -->
+  </section>
+
+  <section class="section" id="products">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>A starting point, not a limit</h2>
+        <p>Explore some of our most requested formats. Every detail can be customised to suit your brand, product, and budget.</p>
+      </div>
+
+      <div class="gallery-filters" id="galleryFilters"></div>
+
+      <div id="productCategories">
+        <div class="category-section">
+          <div class="category-head"><h3>Loading…</h3></div>
+          <div class="carousel">
+            <div class="carousel-track">
+              <div class="product-card skeleton"></div>
+              <div class="product-card skeleton"></div>
+              <div class="product-card skeleton"></div>
+              <div class="product-card skeleton"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-error" id="galleryError" style="display:none;">
+        <p>Couldn't load the gallery right now. <a href="#contact">Contact us</a> to see our full catalogue.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="tagx-lightbox" id="tagxLightbox" role="dialog" aria-modal="true" aria-label="Product image viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous">&#8592;</button>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Next">&#8594;</button>
+    <div class="lightbox-img-wrap">
+      <img src="" alt="" id="lightboxImg">
+    </div>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+  <div class="lightbox-overlay" id="lightboxOverlay"></div>
+
+  <section class="section section-alt" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <!-- <span class="eyebrow eb-denim">About Us</span> -->
+          <h2 class="about-heading">Built for brands that care about every detail.</h2>
+          <p>TagX began with a simple vision: to provide apparel brands with high-quality trims and packaging that elevate every product presentation.</p>
+          <p>From custom hang tags and woven labels to satin labels, stickers, and PVC pouches, every product is manufactured under one roof using carefully selected materials and premium finishing techniques. We serve apparel brands, garment manufacturers, wholesalers, and exporters across India.</p>
+        </div>
+        <div>
+          <ul class="about-list">
+            <li><span class="mark">→</span>Complete in-house manufacturing under one roof</li>
+            <li><span class="mark m2">→</span>Luxury finishes including foil stamping, embossing, debossing, UV coating, and lamination</li>
+            <li><span class="mark m3">→</span>Fully customised sizes, shapes, materials, and designs</li>
+            <li><span class="mark m4">→</span>Consistent quality from sampling to bulk production</li>
+            <li><span class="mark m5">→</span>Reliable pan-India delivery and dedicated support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Tell us what you're producing.</h2>
+          <p>Send your specs, quantities, and timeline — we'll reply with pricing and sample lead time, usually within one business day.</p>
+
+          <div class="contact-detail">
+            <div class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div>
+            <div><div class="ci-label">Phone</div><div class="ci-value"><a href="tel:+917203952969">+91 72039 52969</a></div></div>
+          </div>
+          <div class="contact-detail">
+            <div class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6 12 13 2 6"/></svg></div>
+            <div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:info@tagx.in">info@tagx.in</a></div></div>
+          </div>
+          <div class="contact-detail">
+            <div class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="ci-label">Location</div><div class="ci-value">Ahmedabad, Gujarat, India</div></div>
+          </div>
+
+          <a href="https://wa.me/917203952969?text=Hi%20TagX,%20I'd%20like%20to%20get%20a%20quote." target="_blank" rel="noopener" class="btn-whatsapp btn-whatsapp--offset">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+              <path d="M16.01 3C8.83 3 3 8.83 3 16.01c0 2.29.6 4.52 1.74 6.49L3 29l6.7-1.72a13 13 0 0 0 6.31 1.61C23.19 28.89 29 23.06 29 15.88 29 8.83 23.19 3 16.01 3zm7.53 18.45c-.31.87-1.79 1.67-2.47 1.77-.64.09-1.46.13-2.36-.16-.55-.18-1.26-.41-2.18-.81-3.84-1.66-6.34-5.55-6.53-5.81-.18-.26-1.56-2.08-1.56-3.97 0-1.89.99-2.82 1.34-3.2.35-.38.77-.48 1.02-.48.26 0 .51 0 .73.01.24.01.56-.09.88.67.31.75 1.05 2.59 1.14 2.78.09.19.15.41.03.67-.12.26-.18.42-.36.65-.18.22-.38.49-.54.66-.18.18-.37.37-.16.73.21.36.94 1.55 2.02 2.51 1.39 1.24 2.56 1.62 2.92 1.8.36.18.57.15.78-.09.21-.24.89-1.04 1.13-1.4.24-.36.48-.3.81-.18.33.12 2.1.99 2.46 1.17.36.18.6.27.69.42.09.15.09.87-.22 1.74z"/>
+            </svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+
+        <form id="contactForm" class="form-card" action="https://formspree.io/f/maqzrzrr" method="POST">
+          <div id="formMessage" class="form-message" aria-live="polite" style="display:none;margin-bottom:16px;padding:14px;border-radius:8px;font-size:15px;"></div>
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required>
+            </div>
+            <div class="field">
+              <label for="company">Company</label>
+              <input id="company" name="company" type="text" placeholder="Business name" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@company.com" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="+91 00000 00000">
+            </div>
+          </div>
+          <div class="field">
+              <label for="product">Product required</label>
+            <select id="product" name="product">
+              <option value="Hang Tags">Hang Tags</option>
+              <option value="Visiting Cards">Visiting Cards</option>
+              <option value="Woven Labels">Woven Labels</option>
+              <option value="Satin Labels">Satin Labels</option>
+              <option value="Stickers">Stickers</option>
+              <option value="PVC Pouches">PVC Pouches</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="details">Order details</label>
+            <textarea id="details" name="details" placeholder="Quantity, dimensions, material, finish, and required timeline"></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Request a Quote</button>
+          <p class="form-note">We typically respond within one business day.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-accent-strip" aria-hidden="true">
+    <span class="accent-red"></span>
+    <span class="accent-mustard"></span>
+    <span class="accent-pine"></span>
+    <span class="accent-denim"></span>
+    <span class="accent-blush"></span>
+  </div>
+  <div class="wrap footer-top-padding">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">Tag<span>X</span></div>
+        <p class="footer-tag">Hang tags, visiting cards, woven labels, satin labels, stickers, and PVC pouches manufactured for your brand.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="#about">About</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#products">Catalogue</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:info@tagx.in">info@tagx.in</a>
+          <a href="tel:+917203952969">+91 72039 52969</a>
+          <p>Ahmedabad, India</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 TagX. All rights reserved.</span>
+      <span>Manufactured with precision.</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/917203952969?text=Hi%20TagX,%20I'd%20like%20to%20get%20a%20quote." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+    <path d="M16.01 3C8.83 3 3 8.83 3 16.01c0 2.29.6 4.52 1.74 6.49L3 29l6.7-1.72a13 13 0 0 0 6.31 1.61C23.19 28.89 29 23.06 29 15.88 29 8.83 23.19 3 16.01 3zm7.53 18.45c-.31.87-1.79 1.67-2.47 1.77-.64.09-1.46.13-2.36-.16-.55-.18-1.26-.41-2.18-.81-3.84-1.66-6.34-5.55-6.53-5.81-.18-.26-1.56-2.08-1.56-3.97 0-1.89.99-2.82 1.34-3.2.35-.38.77-.48 1.02-.48.26 0 .51 0 .73.01.24.01.56-.09.88.67.31.75 1.05 2.59 1.14 2.78.09.19.15.41.03.67-.12.26-.18.42-.36.65-.18.22-.38.49-.54.66-.18.18-.37.37-.16.73.21.36.94 1.55 2.02 2.51 1.39 1.24 2.56 1.62 2.92 1.8.36.18.57.15.78-.09.21-.24.89-1.04 1.13-1.4.24-.36.48-.3.81-.18.33.12 2.1.99 2.46 1.17.36.18.6.27.69.42.09.15.09.87-.22 1.74z"/>
+  </svg>
+</a>
+
+<script>
+  document.body.classList.add('js');
+
+  // Mobile Menu Logic
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navUl = document.querySelector('nav ul');
+  const navLinks = document.querySelectorAll('nav a');
+  const whatsappAnchors = document.querySelectorAll('.btn-whatsapp, .whatsapp-float');
+
+  if (menuToggle && navUl) {
+    menuToggle.addEventListener('click', () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+      navUl.classList.toggle('active');
+    });
+  }
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navUl.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  whatsappAnchors.forEach(anchor => {
+    anchor.addEventListener('click', () => {
+      trackClick(anchor.classList.contains('whatsapp-float') ? 'WhatsApp Float' : 'WhatsApp Body');
+    });
+  });
+
+  // Conversion Tracking Stub
+  function trackClick(source) {
+    console.log('Conversion Event: WhatsApp Clicked via', source);
+  }
+
+  // Tag stack cycling — cards swap order one at a time on hover, slow enough to read
+  (function () {
+    const stage = document.getElementById('tagStage');
+    const fan = document.getElementById('tagFan');
+    if (!stage || !fan) return;
+
+    const cards = Array.from(fan.querySelectorAll('.fan-card'));
+    let order = cards.slice(); // order[0] is the front-most card
+    let timer = null;
+    const ADVANCE_MS = 2400; // slow, readable pace
+    const LEAVE_MS = 900;    // how long the leaving card takes before re-stacking
+
+    function applyStackClasses() {
+      order.forEach((card, i) => {
+        card.classList.remove('is-stack-0', 'is-stack-1', 'is-stack-2', 'is-stack-3', 'is-leaving');
+        card.classList.add('is-stack-' + i);
+      });
+    }
+
+    function advance() {
+      const front = order[0];
+      front.classList.remove('is-stack-0');
+      front.classList.add('is-leaving');
+
+      window.setTimeout(() => {
+        order.push(order.shift());
+        applyStackClasses();
+      }, LEAVE_MS);
+    }
+
+    function startCycle() {
+      if (timer) return;
+      timer = window.setInterval(advance, ADVANCE_MS);
+    }
+
+    function stopCycle() {
+      if (timer) {
+        window.clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    applyStackClasses();
+
+    stage.addEventListener('mouseenter', startCycle);
+    stage.addEventListener('mouseleave', stopCycle);
+    stage.addEventListener('touchstart', () => {
+      advance();
+      startCycle();
+    }, { passive: true });
+  })();
+</script>
+
+<script>
+
+
+(function () {
+  const API_URL = "https://script.google.com/macros/s/AKfycbzP0gZoa8GhW_ql_9pQZY4q8_y_oXVluj-eoMF7zsQZiexrcF4VaFJE_AIarBJtxvkD/exec";
+
+  const categoriesEl = document.getElementById("productCategories");
+  const filtersEl   = document.getElementById("galleryFilters"); // kept hidden, unused now
+  const errorEl     = document.getElementById("galleryError");
+  const lightbox    = document.getElementById("tagxLightbox");
+  const overlay     = document.getElementById("lightboxOverlay");
+  const lbImg       = document.getElementById("lightboxImg");
+  const lbCaption   = document.getElementById("lightboxCaption");
+  const lbClose     = document.getElementById("lightboxClose");
+  const lbPrev      = document.getElementById("lightboxPrev");
+  const lbNext      = document.getElementById("lightboxNext");
+
+  let allItems      = [];
+  let filtered      = [];
+  let currentIndex  = 0;
+
+  window.jsonpCallback = function(data) {
+  allItems = Array.isArray(data) ? data : [data];
+  renderCategories(allItems);
+}
+
+const script = document.createElement("script");
+script.src = API_URL + "?callback=jsonpCallback";
+script.onerror = () => {
+  categoriesEl.innerHTML = "";
+  errorEl.style.display = "block";
+};
+document.body.appendChild(script);
+
+  function renderCategories(items) {
+    categoriesEl.innerHTML = "";
+
+    if (!items.length) {
+      categoriesEl.innerHTML = '<p style="color:#6b6460;text-align:center;padding:2rem 0;">No items in this category yet.</p>';
+      return;
+    }
+
+    const categories = [...new Set(items.map(i => i.category || "Other"))];
+    const categoriesData = categories.map(name => ({
+      name,
+      items: items.filter(i => (i.category || "Other") === name)
+    }));
+
+    filtersEl.innerHTML = "";
+    filtersEl.style.display = "flex";
+
+    categoriesData.forEach((catData, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = `gallery-filter-btn${index === 0 ? " active" : ""}`;
+      button.textContent = catData.name;
+      button.addEventListener("click", () => selectCategory(index));
+      filtersEl.appendChild(button);
+    });
+
+    const section = document.createElement("div");
+    section.className = "category-section product-panel";
+    section.innerHTML = `
+      <div class="category-head">
+        <h3>${categoriesData[0].name}</h3>
+        <span class="category-count">${categoriesData[0].items.length} ${categoriesData[0].items.length === 1 ? "item" : "items"}</span>
+      </div>
+      <div class="carousel">
+        <button class="carousel-nav prev" aria-label="Scroll left">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="carousel-track"></div>
+        <button class="carousel-nav next" aria-label="Scroll right">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>`;
+
+    const track = section.querySelector(".carousel-track");
+    const prevBtn = section.querySelector(".carousel-nav.prev");
+    const nextBtn = section.querySelector(".carousel-nav.next");
+    const carousel = section.querySelector(".carousel");
+    const titleEl = section.querySelector(".category-head h3");
+    const countEl = section.querySelector(".category-count");
+    let currentCategory = 0;
+    let autoScrollTimer = null;
+    const AUTO_SCROLL_MS = 3500;
+    const scrollStep = () => Math.max(track.clientWidth * 0.85, 240);
+
+    function renderCurrentCategory() {
+      const catItems = categoriesData[currentCategory].items;
+      titleEl.textContent = categoriesData[currentCategory].name;
+      countEl.textContent = `${catItems.length} ${catItems.length === 1 ? "item" : "items"}`;
+      track.innerHTML = "";
+
+      catItems.forEach((item, idx) => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
+          <div class="product-swatch">
+            <img src="${item.image}" alt="${item.name}" loading="lazy">
+          </div>
+          <div class="product-body">
+            <h3>${item.name}</h3>
+          </div>`;
+        card.addEventListener("click", () => openLightbox(catItems, idx));
+        track.appendChild(card);
+      });
+
+      updateNavState();
+    }
+
+    function selectCategory(index) {
+      if (index === currentCategory) return;
+      currentCategory = index;
+      filtersEl.querySelectorAll("button").forEach((button, btnIndex) => {
+        button.classList.toggle("active", btnIndex === currentCategory);
+      });
+      renderCurrentCategory();
+      stopAutoScroll();
+      startAutoScroll();
+    }
+
+    function updateNavState() {
+      const max = track.scrollWidth - track.clientWidth - 4;
+      prevBtn.disabled = track.scrollLeft <= 4;
+      nextBtn.disabled = track.scrollLeft >= max;
+    }
+
+    prevBtn.addEventListener("click", () => {
+      track.scrollBy({ left: -(track.clientWidth * 0.85), behavior: "smooth" });
+    });
+    nextBtn.addEventListener("click", () => {
+      track.scrollBy({ left: track.clientWidth * 0.85, behavior: "smooth" });
+    });
+
+    function startAutoScroll() {
+      if (autoScrollTimer) return;
+      autoScrollTimer = window.setInterval(() => {
+        const max = track.scrollWidth - track.clientWidth - 4;
+        if (track.scrollLeft >= max) {
+          track.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          track.scrollBy({ left: scrollStep(), behavior: "smooth" });
+        }
+      }, AUTO_SCROLL_MS);
+    }
+
+    function stopAutoScroll() {
+      if (!autoScrollTimer) return;
+      window.clearInterval(autoScrollTimer);
+      autoScrollTimer = null;
+    }
+
+    carousel.addEventListener("mouseenter", stopAutoScroll);
+    carousel.addEventListener("mouseleave", startAutoScroll);
+    carousel.addEventListener("touchstart", stopAutoScroll, { passive: true });
+    carousel.addEventListener("touchend", startAutoScroll, { passive: true });
+
+    track.addEventListener("scroll", updateNavState, { passive: true });
+    window.addEventListener("resize", updateNavState);
+
+    categoriesEl.appendChild(section);
+    renderCurrentCategory();
+    startAutoScroll();
+  }
+
+  function openLightbox(items, idx) {
+    filtered = items;
+    currentIndex = idx;
+    showLightboxItem();
+    lightbox.classList.add("open");
+    overlay.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    overlay.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  function showLightboxItem() {
+    const item = filtered[currentIndex];
+    const preferredSrc = item.full || item.image;
+    lbImg.alt = item.name;
+    lbCaption.textContent = item.name + (item.category ? "  ·  " + item.category : "");
+    lbPrev.style.visibility = currentIndex > 0 ? "visible" : "hidden";
+    lbNext.style.visibility = currentIndex < filtered.length - 1 ? "visible" : "hidden";
+
+    lbImg.onerror = () => {
+      if (lbImg.src !== item.image) {
+        lbImg.src = item.image;
+      }
+    };
+    lbImg.src = preferredSrc;
+  }
+
+  lbClose.addEventListener("click", closeLightbox);
+  overlay.addEventListener("click", closeLightbox);
+  lbPrev.addEventListener("click", () => { if (currentIndex > 0) { currentIndex--; showLightboxItem(); } });
+  lbNext.addEventListener("click", () => { if (currentIndex < filtered.length - 1) { currentIndex++; showLightboxItem(); } });
+
+  document.addEventListener("keydown", e => {
+    if (!lightbox.classList.contains("open")) return;
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft" && currentIndex > 0) { currentIndex--; showLightboxItem(); }
+    if (e.key === "ArrowRight" && currentIndex < filtered.length - 1) { currentIndex++; showLightboxItem(); }
+  });
+
+  const contactForm = document.getElementById("contactForm");
+  const formMessage = document.getElementById("formMessage");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", async event => {
+      event.preventDefault();
+      formMessage.style.display = "none";
+      const formData = new FormData(contactForm);
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: contactForm.method,
+          body: formData,
+          headers: { "Accept": "application/json" }
+        });
+
+        if (!response.ok) throw new Error("Could not submit the form.");
+
+        contactForm.reset();
+        formMessage.textContent = "Thanks! Your request has been received. We’ll reply soon.";
+        formMessage.style.display = "block";
+        formMessage.style.background = "#EAF9F1";
+        formMessage.style.color = "#165536";
+        formMessage.style.border = "1px solid #7DD1A0";
+      } catch (error) {
+        formMessage.textContent = "Oops — something went wrong. Please try again or contact us on WhatsApp.";
+        formMessage.style.display = "block";
+        formMessage.style.background = "#FBEDEE";
+        formMessage.style.color = "#7B1F1F";
+        formMessage.style.border = "1px solid #F2A9A9";
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
