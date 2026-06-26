@@ -1343,17 +1343,22 @@
   let filtered      = [];
   let currentIndex  = 0;
 
-  window.jsonpCallback = function(data) {
-  allItems = Array.isArray(data) ? data : [data];
-  renderCategories(allItems);
-}
-
-const script = document.createElement("script");
-script.src = API_URL + "?callback=jsonpCallback";
-script.onerror = () => {
-  categoriesEl.innerHTML = "";
-  errorEl.style.display = "block";
-};
+  fetch(API_URL)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("HTTP " + response.status);
+    }
+    return response.json();
+  })
+  .then(data => {
+    allItems = Array.isArray(data) ? data : [data];
+    renderCategories(allItems);
+  })
+  .catch(err => {
+    console.error("Gallery Error:", err);
+    categoriesEl.innerHTML = "";
+    errorEl.style.display = "block";
+  });
 document.body.appendChild(script);
 
   function renderCategories(items) {
