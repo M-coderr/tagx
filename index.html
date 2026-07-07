@@ -568,8 +568,8 @@
   }
 
   .category-tab.active {
-    background: #fff;
-    color: #111;
+    background: var(--paper);
+    color: var(--ink);
     box-shadow: 0 14px 38px rgba(0,0,0,0.16);
   }
 
@@ -583,7 +583,7 @@
   .gallery-filter-btn {
     appearance: none;
     border: 1px solid rgba(28,26,23,0.14);
-    background: #fff;
+    background: var(--kraft-light);
     color: #1c1a17;
     font-weight: 600;
     font-size: 13px;
@@ -595,8 +595,9 @@
 
   .gallery-filter-btn:hover {
     transform: translateY(-1px);
-    background: #f5f2ed;
-    border-color: rgba(28,26,23,0.28);
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
   }
 
   .gallery-filter-btn.active {
@@ -607,7 +608,7 @@
   }
 
   .category-section.product-panel {
-    background: #fff;
+    background: var(--kraft-light);
     border-radius: 10px;
     padding: 24px;
     border: 1px solid rgba(28,26,23,0.08);
@@ -660,12 +661,12 @@
   .product-card {
     flex: 0 0 240px;
     scroll-snap-align: start;
-    background: #fff;
+    background: var(--paper);
     border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid #e8e4de;
+    border: 1px solid var(--kraft-light);
   }
 
   .product-card:hover {
@@ -676,7 +677,7 @@
   .product-swatch {
     aspect-ratio: 4/3;
     overflow: hidden;
-    background: #f5f2ed;
+    background: var(--kraft);
   }
 
   .product-swatch img {
