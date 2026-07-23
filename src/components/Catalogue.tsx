@@ -13,7 +13,7 @@ export default function Catalogue() {
   const [ref, inView] = useInView(0.1);
 
   return (
-    <section className="relative py-28" style={{ background: "var(--color-cream)" }}>
+    <section className="relative py-24 lg:py-28" style={{ background: "var(--color-cream)" }}>
       <div ref={ref} className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="inline-block text-[11px] tracking-[0.15em] text-[var(--color-copper)] uppercase mb-5" style={{ opacity: inView ? 1 : 0, transition: "all 0.5s ease" }}>Catalogue</span>

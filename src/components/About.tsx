@@ -7,10 +7,10 @@ export default function About() {
   const [ref, inView] = useInView(0.15);
 
   return (
-    <section id="about" className="relative py-28" style={{ background: "var(--color-cream)" }}>
+    <section id="about" className="relative py-24 lg:py-28" style={{ background: "var(--color-cream)" }}>
       <div ref={ref} className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-          <div>
+        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
+          <div className="max-w-xl">
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-tight mb-7 text-[var(--color-ink)]" style={{ opacity: inView ? 1 : 0, transform: inView ? "none" : "translateY(15px)", transition: "all 0.6s ease 0.1s" }}>
               Built for brands that care about <span className="copper-text">every detail</span>.
             </h2>
@@ -31,11 +31,41 @@ export default function About() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center" style={{ perspective: "800px", opacity: inView ? 1 : 0, transform: inView ? "none" : "translateY(20px)", transition: "all 0.7s ease 0.3s" }}>
-            <div style={{ transform: "rotateY(-14deg) rotateX(8deg) translateZ(50px)", transformStyle: "preserve-3d" }}>
-              <img src="/tag1.jpeg" alt="TagX Hang Tag" className="w-[22rem] md:w-[36rem] h-[30rem] md:h-[42rem] object-contain" style={{ filter: "drop-shadow(20px 25px 50px rgba(0,0,0,0.4)) drop-shadow(8px 12px 20px rgba(0,0,0,0.3)) drop-shadow(0px 4px 8px rgba(0,0,0,0.2))" }} loading="lazy" />
-            </div>
-          </div>
+          <div
+  className="flex justify-center lg:justify-end items-center pr-4 lg:pr-12"
+  style={{
+    perspective: "1200px",
+    opacity: inView ? 1 : 0,
+    transform: inView ? "none" : "translateY(20px)",
+    transition: "all 0.7s ease 0.3s",
+  }}
+>
+  <div
+    style={{
+      transform: "rotateY(-8deg) rotateX(4deg)",
+      transformStyle: "preserve-3d",
+    }}
+  >
+    <img
+      src="/tag1.jpeg"
+      alt="TagX Hang Tag"
+      loading="lazy"
+      className="
+        w-[18rem]
+        md:w-[22rem]
+        lg:w-[26rem]
+        xl:w-[28rem]
+        h-auto
+        object-contain
+        rounded-2xl
+      "
+      style={{
+        filter:
+          "drop-shadow(0 25px 45px rgba(0,0,0,.18))",
+      }}
+    />
+  </div>
+</div>
         </div>
       </div>
     </section>

@@ -7,7 +7,7 @@ export default function ProductShowcase() {
   const [ref, inView] = useInView(0.1);
 
   return (
-    <section id="products" className="relative py-28" style={{ background: "var(--color-cream)" }}>
+    <section id="products" className="relative py-24 lg:py-28" style={{ background: "var(--color-cream)" }}>
       <div className="section-line-light mb-20" />
       <div ref={ref} className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
