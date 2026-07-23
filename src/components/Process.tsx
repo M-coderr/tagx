@@ -32,9 +32,9 @@ export default function Process() {
               <div key={step.step} className="text-center group" style={{ opacity: inView ? 1 : 0, transform: inView ? "none" : "translateY(20px)", transition: `all 0.6s ease ${0.2 + i * 0.1}s` }}>
                 <div className="relative inline-block mb-5">
                   <div className="w-14 h-14 rounded-2xl card-light flex items-center justify-center mx-auto group-hover:border-[var(--color-copper)]/30 group-hover:shadow-[0_0_20px_rgba(74,93,78,0.08)] transition-all duration-300">
-                    <step.icon className="w-5 h-5 text-[var(--color-copper)]" />
+                    <step.icon className="w-4 h-4 md:w-5 md:h-5 text-[var(--color-copper)]" />
                   </div>
-                  <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full copper-grad flex items-center justify-center text-[9px] font-bold text-[var(--color-cream)]">
+                  <span className="absolute -top-1.5 -right-1.5 w-4 h-4 md:w-5 md:h-5 rounded-full copper-grad flex items-center justify-center text-[9px] font-bold text-[var(--color-cream)]">
                     {step.step}
                   </span>
                 </div>

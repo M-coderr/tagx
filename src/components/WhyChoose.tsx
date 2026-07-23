@@ -34,7 +34,7 @@ export default function WhyChoose() {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[radial-gradient(circle_at_top_right,rgba(74,93,78,0.06),transparent)]" />
                 <div className="relative z-10">
                   <div className="w-11 h-11 rounded-xl bg-[var(--color-copper)]/10 flex items-center justify-center mb-5 group-hover:bg-[var(--color-copper)]/15 transition-colors duration-300">
-                    <r.icon className="w-5 h-5 text-[var(--color-copper)]" />
+                    <r.icon className="w-4 h-4 md:w-5 md:h-5 text-[var(--color-copper)]" />
                   </div>
                   <h3 className="text-base font-semibold text-[var(--color-ink)] mb-2">{r.title}</h3>
                   <p className="text-sm text-[var(--color-ink)]/45 leading-relaxed">{r.description}</p>

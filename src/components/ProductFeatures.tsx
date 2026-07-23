@@ -125,8 +125,18 @@ function TagCard({ product, index, inView }: { product: typeof products[0]; inde
     setIsHovered(false);
   }, []);
 
-  const baseTiltX = index % 2 === 0 ? 5 : 5;
-  const baseTiltY = index % 2 === 0 ? -10 : 10;
+  const isMobile =
+  typeof window !== "undefined" && window.innerWidth < 768;
+
+const baseTiltX = isMobile ? 2 : 5;
+
+const baseTiltY = isMobile
+  ? index % 2 === 0
+    ? -4
+    : 4
+  : index % 2 === 0
+    ? -10
+    : 10;
   const shadowDir = index % 2 === 0 ? 1 : -1;
 
   return (
@@ -150,20 +160,30 @@ function TagCard({ product, index, inView }: { product: typeof products[0]; inde
         }}
       >
         {/* String */}
-        <div className="absolute left-1/2 -translate-x-1/2 w-[1.5px] h-8 bg-gradient-to-b from-[#8C8275]/15 to-[#8C8275]/50" style={{ top: "-30px" }} />
+        <div className="absolute left-1/2 -translate-x-1/2 w-[1px] h-6 md:h-8 bg-gradient-to-b from-[#8C8275]/15 to-[#8C8275]/50" style={{ top: "-30px" }} />
         {/* Eyelet hole */}
-        <div className="absolute left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 border-[#8C8275]/40 bg-[var(--color-cream-dark)] shadow-sm" style={{ top: "-8px", zIndex: 10 }}>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#8C8275]/25" />
+        <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 md:w-5 md:h-5 rounded-full border-2 border-[#8C8275]/40 bg-[var(--color-cream-dark)] shadow-sm" style={{ top: "-8px", zIndex: 10 }}>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#8C8275]/25" />
         </div>
 
         {/* Tag body */}
         <div
-          className="relative rounded-2xl overflow-hidden"
+          className="
+relative
+rounded-2xl
+overflow-hidden
+w-[82vw]
+max-w-[330px]
+md:w-auto
+md:max-w-none
+"
           style={{
             background: product.bg,
             boxShadow: isHovered
-              ? `${shadowDir * 20}px 24px 50px rgba(0,0,0,0.35), ${shadowDir * 8}px 12px 20px rgba(0,0,0,0.22), 0 0 30px rgba(0,0,0,0.08)`
-              : `${shadowDir * 14}px 18px 40px rgba(0,0,0,0.28), ${shadowDir * 5}px 8px 15px rgba(0,0,0,0.18)`,
+  ? `${shadowDir * 14}px 18px 32px rgba(0,0,0,0.25),
+     ${shadowDir * 4}px 8px 14px rgba(0,0,0,0.18)`
+  : `${shadowDir * 8}px 10px 20px rgba(0,0,0,0.18),
+     ${shadowDir * 3}px 5px 10px rgba(0,0,0,0.12)`,
             transition: "box-shadow 0.4s ease",
           }}
         >
@@ -171,11 +191,23 @@ function TagCard({ product, index, inView }: { product: typeof products[0]; inde
           <div className="absolute inset-0" style={getTextureStyle(product.texture)} />
 
           {/* Content */}
-          <div className="relative z-10 p-6 md:p-7">
-            <h3 className="text-xl md:text-2xl font-bold mb-1.5" style={{ color: product.textColor }}>
+          <div className="relative z-10 p-4 sm:p-5 md:p-7">
+            <h3 className="
+text-base
+sm:text-lg
+md:text-2xl
+font-bold
+mb-2
+" style={{ color: product.textColor }}>
               {product.name}
             </h3>
-            <p className="text-sm leading-relaxed mb-5 opacity-65" style={{ color: product.textColor }}>
+            <p className="
+text-xs
+sm:text-sm
+leading-relaxed
+mb-4
+opacity-65
+" style={{ color: product.textColor }}>
               {product.description}
             </p>
 
@@ -184,7 +216,16 @@ function TagCard({ product, index, inView }: { product: typeof products[0]; inde
               <p className="text-[10px] tracking-[0.2em] uppercase mb-2 opacity-40" style={{ color: product.textColor }}>Features</p>
               <div className="flex flex-wrap gap-1.5">
                 {product.features.map((f) => (
-                  <span key={f} className="px-2.5 py-1 text-[11px] rounded-full border" style={{ color: product.textColor, borderColor: `${product.textColor}25`, background: `${product.textColor}10` }}>
+                  <span key={f} className="
+px-2
+py-0.5
+text-[10px]
+md:px-2.5
+md:py-1
+md:text-[11px]
+rounded-full
+border
+" style={{ color: product.textColor, borderColor: `${product.textColor}25`, background: `${product.textColor}10` }}>
                     {f}
                   </span>
                 ))}
@@ -212,7 +253,7 @@ export default function ProductFeatures() {
   const [ref, inView] = useInView(0.1);
 
   return (
-    <section className="relative py-28 overflow-hidden" style={{ background: "var(--color-cream-dark)" }}>
+    <section className="relative py-20 md:py-28 overflow-hidden" style={{ background: "var(--color-cream-dark)" }}>
       <div className="max-w-7xl mx-auto px-6 relative z-10" ref={ref}>
         <div className="text-center mb-16">
           <span className="inline-block text-[11px] tracking-[0.15em] text-[var(--color-copper)] uppercase mb-5" style={{ opacity: inView ? 1 : 0, transition: "all 0.5s ease" }}>What We Manufacture</span>
@@ -221,7 +262,7 @@ export default function ProductFeatures() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 md:gap-14" style={{ perspective: "1200px" }}>
+        <div className="grid md:grid-cols-2 gap-8 md:gap-14" style={{ perspective: "1200px" }}>
           {products.map((p, i) => (
             <TagCard key={p.name} product={p} index={i} inView={inView} />
           ))}

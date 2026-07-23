@@ -56,10 +56,10 @@ function LabelTag({ product, index, inView }: { product: typeof products[0]; ind
         }}
       >
         {/* String / Rope */}
-        <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-[1.5px] h-8 bg-gradient-to-b from-[#8C8275]/20 to-[#8C8275]/60 z-10" />
+        <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-[1px] h-6 md:h-8 bg-gradient-to-b from-[#8C8275]/20 to-[#8C8275]/60 z-10" />
         {/* Hole / Eyelet */}
-        <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 border-[#8C8275]/50 bg-[var(--color-cream)] shadow-sm z-10" />
-        <div className="absolute -top-0.5 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#8C8275]/30 z-10" />
+        <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 md:w-5 md:h-5 rounded-full border-2 border-[#8C8275]/50 bg-[var(--color-cream)] shadow-sm z-10" />
+        <div className="absolute -top-0.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#8C8275]/30 z-10" />
 
         {/* Label card */}
         <div

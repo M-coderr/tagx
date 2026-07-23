@@ -74,7 +74,7 @@ export default function MotionTiles() {
   };
 
   return (
-    <section className="relative py-28 overflow-hidden" style={{ background: "linear-gradient(160deg, #1E3A28, #264432)" }}>
+    <section className="relative py-20 md:py-28 overflow-hidden" style={{ background: "linear-gradient(160deg, #1E3A28, #264432)" }}>
       <div className="max-w-7xl mx-auto px-6">
         {/* Desktop */}
         <div className="hidden md:flex items-center justify-between gap-12" style={{ minHeight: 435 }}>
