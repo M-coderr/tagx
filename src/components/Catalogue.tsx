@@ -26,7 +26,7 @@ export default function Catalogue() {
           {catalogues.map((cat, i) => (
             <div key={cat.title} className="p-7 rounded-2xl card-light hover-lift hover-glow-copper group" style={{ opacity: inView ? 1 : 0, transform: inView ? "none" : "translateY(20px)", transition: `all 0.6s ease ${0.2 + i * 0.1}s` }}>
               <div className="w-12 h-12 rounded-xl bg-[var(--color-copper)]/10 flex items-center justify-center mb-5 group-hover:bg-[var(--color-copper)]/15 transition-colors">
-                <cat.icon className="w-4 h-4 md:w-5 md:h-5 text-[var(--color-copper)]" />
+                <cat.icon className="w-5 h-5 text-[var(--color-copper)]" />
               </div>
               <h3 className="text-base font-semibold text-[var(--color-ink)] mb-2">{cat.title}</h3>
               <p className="text-sm text-[var(--color-ink)]/40 leading-relaxed mb-5">{cat.description}</p>
@@ -45,7 +45,7 @@ export default function Catalogue() {
 
         <div className="mt-10 text-center" style={{ opacity: inView ? 1 : 0, transition: "all 0.6s ease 0.5s" }}>
           <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full card-light">
-            <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[var(--color-copper)]" style={{ animation: "pulse-soft 2s ease infinite" }} />
+            <span className="w-2 h-2 rounded-full bg-[var(--color-copper)]" style={{ animation: "pulse-soft 2s ease infinite" }} />
             <span className="text-xs text-[var(--color-ink)]/50">
               MOQ: <span className="text-[var(--color-copper)] font-medium">500 pcs</span> &middot; Free samples on request
             </span>

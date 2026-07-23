@@ -68,7 +68,7 @@ export default function Preloader() {
 
             {/* Tag hole */}
             <div className="absolute top-5 left-1/2 -translate-x-1/2">
-              <div className="w-4 h-4 md:w-5 md:h-5 rounded-full border-2 border-[var(--color-copper)]/40"
+              <div className="w-5 h-5 rounded-full border-2 border-[var(--color-copper)]/40"
                 style={{
                   opacity: phase >= 2 ? 1 : 0,
                   transform: phase >= 2 ? "scale(1)" : "scale(0)",

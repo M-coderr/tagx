@@ -40,7 +40,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-20 md:py-28 overflow-hidden" style={{ background: "var(--color-cream)" }}>
+    <section id="contact" className="relative py-28 overflow-hidden" style={{ background: "var(--color-cream)" }}>
       <InteractiveDots opacity={0.12} />
       <div className="section-line-light mb-20 relative z-10" />
       <div ref={ref} className="max-w-7xl mx-auto px-6 relative z-10">
@@ -81,7 +81,7 @@ export default function Contact() {
               </div>
             </div>
             <a href="https://wa.me/917203952969" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 w-full px-5 py-3.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 text-[#25D366] hover:bg-[#25D366]/20 transition-all duration-300 mt-2">
-              <MessageCircle className="w-4 h-4 md:w-5 md:h-5" />
+              <MessageCircle className="w-5 h-5" />
               <span className="text-sm font-medium">Chat on WhatsApp</span>
             </a>
           </div>
