@@ -48,7 +48,7 @@ export default function About() {
   >
     <img
       src="/tag1.jpeg"
-      alt="TagX Hang Tag"
+      alt="TagX Custom Hang Tag & Premium Garment Label Manufacturer Ahmedabad India"
       loading="lazy"
       className="
         w-[18rem]

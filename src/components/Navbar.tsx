@@ -32,7 +32,7 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-5 md:px-6 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5 group">
-            <img src="/TagXLogo.svg" alt="TagX" className="h-10 w-auto transition-transform duration-300 group-hover:scale-105" />
+            <img src="/TagXLogo.svg" alt="TagX Garment Accessories Logo" className="h-10 w-auto transition-transform duration-300 group-hover:scale-105" />
             <span className="text-xl font-bold text-[var(--color-ink)]">Tag<span className="copper-text" style={{ filter: "drop-shadow(0 0 10px rgba(58,130,80,0.5))" }}>X</span></span>
           </Link>
 

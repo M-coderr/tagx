@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-5 group">
-              <img src="/TagXLogo.svg" alt="TagX" className="h-7 w-auto" />
+              <img src="/TagXLogo.svg" alt="TagX Garment Accessories Logo" className="h-7 w-auto" />
               <span className="text-lg font-bold text-[var(--color-cream)]">TagX</span>
             </Link>
             <p className="text-sm text-[var(--color-cream)]/40 leading-relaxed max-w-sm">
