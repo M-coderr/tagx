@@ -79,14 +79,14 @@ export default function Hero() {
           <div className={`mb-5 md:mb-6 transition-all duration-1000 ${loaded ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: "2.2s" }}>
             <div className="overflow-hidden">
               <div style={{ transform: loaded ? "translateY(0)" : "translateY(100%)", transition: "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 2.2s" }}>
-                <h1 className="text-[1.75rem] sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.2] tracking-tight text-[var(--color-ink)] whitespace-nowrap">
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-[1.2] tracking-tight text-[var(--color-ink)] whitespace-nowrap">
                   Tags that hang right.
                 </h1>
               </div>
             </div>
             <div className="overflow-hidden mt-0">
               <div style={{ transform: loaded ? "translateY(0)" : "translateY(100%)", transition: "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 2.4s" }}>
-                <h1 className="text-[1.75rem] sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.2] tracking-tight text-[var(--color-ink)] whitespace-nowrap">
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-[1.2] tracking-tight text-[var(--color-ink)] whitespace-nowrap">
                   Labels that <span className="copper-text" style={{ filter: "drop-shadow(0 0 12px rgba(58,130,80,0.4)) drop-shadow(0 0 24px rgba(58,130,80,0.2))" }}>stay on</span>.
                 </h1>
               </div>
