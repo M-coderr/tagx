@@ -7,11 +7,11 @@ export default function Preloader() {
 
   useEffect(() => {
     const timers = [
-      setTimeout(() => setPhase(1), 400),
-      setTimeout(() => setPhase(2), 1200),
-      setTimeout(() => setPhase(3), 2200),
-      setTimeout(() => setPhase(4), 3400),
-      setTimeout(() => setPhase(5), 4500),
+      setTimeout(() => setPhase(1), 150),
+      setTimeout(() => setPhase(2), 500),
+      setTimeout(() => setPhase(3), 900),
+      setTimeout(() => setPhase(4), 1400),
+      setTimeout(() => setPhase(5), 1900),
     ];
     return () => timers.forEach(clearTimeout);
   }, []);
@@ -24,7 +24,7 @@ export default function Preloader() {
       style={{
         background: "#D8D3C9",
         opacity: phase >= 4 ? 0 : 1,
-        transition: "opacity 1s ease",
+        transition: "opacity 0.5s ease",
         pointerEvents: phase >= 4 ? "none" : "auto",
       }}
     >
@@ -40,7 +40,7 @@ export default function Preloader() {
           style={{
             transformStyle: "preserve-3d",
             transform: phase >= 1 ? "rotateX(0deg) rotateY(0deg)" : "rotateX(-25deg) rotateY(15deg)",
-            transition: "transform 1.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
+            transition: "transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)",
           }}
         >
           {/* Tag body - front */}
@@ -51,7 +51,7 @@ export default function Preloader() {
               boxShadow: phase >= 2
                 ? "0 25px 70px rgba(0,0,0,0.15), 0 0 40px rgba(74,93,78,0.08), inset 0 1px 0 rgba(255,255,255,0.5)"
                 : "0 5px 20px rgba(0,0,0,0.08)",
-              transition: "box-shadow 1s ease 0.3s",
+              transition: "box-shadow 0.6s ease 0.15s",
               backfaceVisibility: "hidden",
             }}
           >
@@ -63,7 +63,7 @@ export default function Preloader() {
 
             {/* Top green border */}
             <div className="absolute top-0 left-0 right-0 h-[3px] copper-grad"
-              style={{ opacity: phase >= 2 ? 1 : 0, transition: "opacity 0.6s ease 0.3s" }}
+              style={{ opacity: phase >= 2 ? 1 : 0, transition: "opacity 0.4s ease 0.15s" }}
             />
 
             {/* Tag hole */}
@@ -72,20 +72,20 @@ export default function Preloader() {
                 style={{
                   opacity: phase >= 2 ? 1 : 0,
                   transform: phase >= 2 ? "scale(1)" : "scale(0)",
-                  transition: "all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s",
+                  transition: "all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s",
                   background: "radial-gradient(circle at 40% 40%, rgba(255,255,255,0.4), transparent)",
                 }}
               />
               <svg className="absolute -top-7 left-1/2 -translate-x-1/2 w-10 h-10" viewBox="0 0 36 36">
                 <path d="M18,30 Q18,6 24,2" fill="none" stroke="var(--color-copper)" strokeWidth="1.2" strokeLinecap="round"
-                  style={{ strokeDasharray: 35, strokeDashoffset: phase >= 2 ? 0 : 35, opacity: phase >= 2 ? 0.5 : 0, transition: "all 1s ease 0.4s" }}
+                  style={{ strokeDasharray: 35, strokeDashoffset: phase >= 2 ? 0 : 35, opacity: phase >= 2 ? 0.5 : 0, transition: "all 0.6s ease 0.2s" }}
                 />
               </svg>
             </div>
 
             {/* Logo area */}
             <div className="absolute top-14 left-0 right-0 text-center"
-              style={{ opacity: phase >= 3 ? 1 : 0, transform: phase >= 3 ? "translateY(0)" : "translateY(8px)", transition: "all 0.7s ease 0.4s" }}
+              style={{ opacity: phase >= 3 ? 1 : 0, transform: phase >= 3 ? "translateY(0)" : "translateY(8px)", transition: "all 0.5s ease 0.2s" }}
             >
               <div className="inline-flex items-center gap-2">
                 <div className="w-6 h-[1px] bg-[var(--color-copper)]/50" />
@@ -97,7 +97,7 @@ export default function Preloader() {
 
             {/* Diamond pattern */}
             <div className="absolute top-[72px] left-0 right-0 flex justify-center"
-              style={{ opacity: phase >= 3 ? 1 : 0, transition: "opacity 0.6s ease 0.5s" }}
+              style={{ opacity: phase >= 3 ? 1 : 0, transition: "opacity 0.4s ease 0.25s" }}
             >
               <svg width="80" height="12" viewBox="0 0 80 12">
                 <path d="M0,6 L10,0 L20,6 L10,12 Z" fill="none" stroke="rgba(74,93,78,0.2)" strokeWidth="0.6" />
@@ -118,7 +118,7 @@ export default function Preloader() {
                     opacity: phase >= 3 ? 1 : 0,
                     transform: phase >= 3 ? "scaleX(1)" : "scaleX(0)",
                     transformOrigin: "left",
-                    transition: `all 0.7s ease ${0.5 + i * 0.1}s`,
+                    transition: `all 0.5s ease ${0.25 + i * 0.05}s`,
                   }}
                 />
               ))}
@@ -126,7 +126,7 @@ export default function Preloader() {
 
             {/* Mini icons */}
             <div className="absolute top-[145px] left-7 right-7 flex justify-between"
-              style={{ opacity: phase >= 3 ? 1 : 0, transition: "opacity 0.6s ease 0.7s" }}
+              style={{ opacity: phase >= 3 ? 1 : 0, transition: "opacity 0.4s ease 0.35s" }}
             >
               <svg width="18" height="22" viewBox="0 0 18 22" fill="none">
                 <rect x="1" y="3" width="16" height="18" rx="2" stroke="rgba(74,93,78,0.2)" strokeWidth="0.8" />
@@ -149,7 +149,7 @@ export default function Preloader() {
 
             {/* Bottom info */}
             <div className="absolute bottom-7 left-7 right-7"
-              style={{ opacity: phase >= 3 ? 1 : 0, transition: "opacity 0.6s ease 0.8s" }}
+              style={{ opacity: phase >= 3 ? 1 : 0, transition: "opacity 0.4s ease 0.4s" }}
             >
               <div className="flex items-center justify-between">
                 <div>
@@ -168,12 +168,12 @@ export default function Preloader() {
 
             {/* Bottom green accent */}
             <div className="absolute bottom-0 left-0 right-0 h-[3px] copper-grad"
-              style={{ opacity: phase >= 3 ? 1 : 0, transition: "opacity 0.6s ease 0.6s" }}
+              style={{ opacity: phase >= 3 ? 1 : 0, transition: "opacity 0.4s ease 0.3s" }}
             />
 
             {/* Corner fold */}
             <div className="absolute top-0 right-0 w-8 h-8 overflow-hidden"
-              style={{ opacity: phase >= 2 ? 0.3 : 0, transition: "opacity 0.7s ease 0.3s" }}
+              style={{ opacity: phase >= 2 ? 0.3 : 0, transition: "opacity 0.4s ease 0.15s" }}
             >
               <div className="absolute -top-4 -right-4 w-8 h-8 bg-[#d4cfc5] rotate-45" />
             </div>
@@ -184,7 +184,7 @@ export default function Preloader() {
             style={{ background: "linear-gradient(145deg, #ebe4d8, #ddd5c8)", transform: "rotateY(180deg)", backfaceVisibility: "hidden", boxShadow: "0 25px 60px rgba(0,0,0,0.15)" }}
           >
             <div className="absolute inset-0 opacity-[0.03]" style={{
-              backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.06' numOctaves='4' seed='5'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E\")",
+              backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.06' numOctaves='4' seed='5'/%3E%3FeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E\")",
               backgroundSize: "150px 150px",
             }} />
           </div>
@@ -194,7 +194,7 @@ export default function Preloader() {
             style={{
               background: "linear-gradient(90deg, transparent 48%, rgba(0,0,0,0.04) 50%, transparent 52%)",
               opacity: phase >= 1 && phase < 2 ? 1 : 0,
-              transition: "opacity 0.6s ease",
+              transition: "opacity 0.4s ease",
               backfaceVisibility: "hidden",
             }}
           />
@@ -202,7 +202,7 @@ export default function Preloader() {
 
         {/* Brand text */}
         <div className="text-center mt-12"
-          style={{ opacity: phase >= 3 ? 1 : 0, transform: phase >= 3 ? "translateY(0)" : "translateY(15px)", transition: "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s" }}
+          style={{ opacity: phase >= 3 ? 1 : 0, transform: phase >= 3 ? "translateY(0)" : "translateY(15px)", transition: "all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s" }}
         >
           <h1 className="text-3xl font-bold copper-text">TagX</h1>
           <p className="text-[10px] tracking-[0.2em] text-[var(--color-ink)]/30 uppercase mt-2">Premium Garment Trims</p>
@@ -213,7 +213,7 @@ export default function Preloader() {
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-24">
         <div className="h-[1px] w-full bg-[var(--color-copper)]/10 overflow-hidden rounded-full">
           <div className="h-full copper-grad rounded-full"
-            style={{ width: `${Math.min((phase / 4) * 100, 100)}%`, transition: "width 0.8s ease" }}
+            style={{ width: `${Math.min((phase / 4) * 100, 100)}%`, transition: "width 0.4s ease" }}
           />
         </div>
       </div>

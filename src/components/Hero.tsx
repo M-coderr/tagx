@@ -76,16 +76,16 @@ export default function Hero() {
         {/* Left: Text */}
         <div className="flex-1 lg:flex-[1.2] text-center lg:text-left">
           {/* Main heading */}
-          <div className={`mb-5 md:mb-6 transition-all duration-1000 ${loaded ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: "2.2s" }}>
+          <div className={`mb-5 md:mb-6 transition-all duration-1000 ${loaded ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: "1.0s" }}>
             <div className="overflow-hidden">
-              <div style={{ transform: loaded ? "translateY(0)" : "translateY(100%)", transition: "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 2.2s" }}>
+              <div style={{ transform: loaded ? "translateY(0)" : "translateY(100%)", transition: "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.0s" }}>
                 <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-[1.2] tracking-tight text-[var(--color-ink)] whitespace-nowrap">
                   Tags that hang right.
                 </h1>
               </div>
             </div>
             <div className="overflow-hidden mt-0">
-              <div style={{ transform: loaded ? "translateY(0)" : "translateY(100%)", transition: "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 2.4s" }}>
+              <div style={{ transform: loaded ? "translateY(0)" : "translateY(100%)", transition: "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.2s" }}>
                 <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-[1.2] tracking-tight text-[var(--color-ink)] whitespace-nowrap">
                   Labels that <span className="copper-text" style={{ filter: "drop-shadow(0 0 12px rgba(58,130,80,0.4)) drop-shadow(0 0 24px rgba(58,130,80,0.2))" }}>stay on</span>.
                 </h1>
@@ -94,7 +94,7 @@ export default function Hero() {
           </div>
 
           {/* Rotating word */}
-          <div className={`mb-5 md:mb-8 transition-all duration-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "2.8s" }}>
+          <div className={`mb-5 md:mb-8 transition-all duration-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "1.4s" }}>
             <div className="inline-flex items-center gap-2 md:gap-3 px-4 md:px-5 py-2 md:py-2.5 rounded-full glass-light">
               <span className="text-[10px] md:text-[11px] text-[var(--color-ink)]/40 uppercase tracking-[0.15em]">We make</span>
               <div className="relative h-5 overflow-hidden min-w-[120px] md:min-w-[140px]">
@@ -116,12 +116,12 @@ export default function Hero() {
           </div>
 
           {/* Description */}
-          <p className={`max-w-lg mx-auto lg:mx-0 text-base md:text-lg text-[var(--color-ink)]/50 leading-relaxed mb-8 md:mb-12 transition-all duration-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "2.9s" }}>
+          <p className={`max-w-lg mx-auto lg:mx-0 text-base md:text-lg text-[var(--color-ink)]/50 leading-relaxed mb-8 md:mb-12 transition-all duration-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "1.5s" }}>
             Premium garment trims manufactured in-house with luxury finishes for clothing brands across India.
           </p>
 
           {/* CTAs */}
-          <div className={`flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 md:gap-4 transition-all duration-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "3s" }}>
+          <div className={`flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 md:gap-4 transition-all duration-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "1.6s" }}>
             <MagneticButton href="#contact" className="group flex items-center gap-3 px-7 md:px-8 py-3.5 md:py-4 text-sm md:text-base font-semibold text-[var(--color-cream)] copper-grad rounded-full hover:shadow-[0_0_40px_rgba(74,93,78,0.25)] duration-300">
               Request a Quote
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" />
@@ -140,7 +140,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className={`absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 transition-all duration-700 ${loaded ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: "3.5s" }}>
+      <div className={`absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 transition-all duration-700 ${loaded ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: "1.8s" }}>
         <span className="text-[9px] md:text-[10px] tracking-[0.15em] text-[var(--color-ink)]/25 uppercase">Scroll</span>
         <div style={{ animation: "float 2s ease-in-out infinite" }}>
           <ChevronDown className="w-4 h-4 text-[var(--color-copper)]/60" />
