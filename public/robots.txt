@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+
+Sitemap: https://tagx.co.in/sitemap.xml
+Host: https://tagx.co.in
