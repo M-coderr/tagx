@@ -1,6 +1,10 @@
 "use client";
 
-import { useRef, useEffect, useState, useCallback } from "react";
+import { useRef, useEffect, useState, useCallback, useSyncExternalStore } from "react";
+
+const subscribe = () => () => {};
+const getSnapshot = () => true;
+const getServerSnapshot = () => false;
 
 const DRIVE_API = "https://script.google.com/macros/s/AKfycbzP0gZoa8GhW_ql_9pQZY4q8_y_oXVluj-eoMF7zsQZiexrcF4VaFJE_AIarBJtxvkD/exec";
 
@@ -76,13 +80,14 @@ function buildPool(source: Card[]): Card[] {
 const INIT_POOL = buildPool(FALLBACK_CARDS);
 
 export default function DepthBlurCarousel() {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   const [allCards, setAllCards] = useState<Card[]>(FALLBACK_CARDS);
   const [categories, setCategories] = useState<string[]>([]);
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [poolVersion, setPoolVersion] = useState(0);
   const [loadedMap, setLoadedMap] = useState<Record<string, boolean>>({});
 
+  const [pool, setPool] = useState<Card[]>(INIT_POOL);
   const poolDataRef = useRef<Card[]>(INIT_POOL);
   const totalRef = useRef(INIT_POOL.length);
   const scrollRef = useRef(0);
@@ -99,9 +104,7 @@ export default function DepthBlurCarousel() {
     loadedRef.current.add(src);
     const img = new window.Image();
     img.src = src;
-    img.onload = () => {
-      setLoadedMap((prev) => ({ ...prev, [src]: true }));
-    };
+    img.onload = () => setLoadedMap((p) => ({ ...p, [src]: true }));
   }, []);
 
   const preloadBatch = useCallback((cards: Card[]) => {
@@ -109,7 +112,6 @@ export default function DepthBlurCarousel() {
   }, [preloadImage]);
 
   useEffect(() => {
-    setMounted(true);
     fetch(DRIVE_API)
       .then((r) => r.json())
       .then((data: DriveImage[]) => {
@@ -125,28 +127,30 @@ export default function DepthBlurCarousel() {
 
   useEffect(() => {
     if (!mounted || allCards.length === 0 || userInteractedRef.current) return;
-    const pool = buildPool(allCards);
-    poolDataRef.current = pool;
-    totalRef.current = pool.length;
+    const newPool = buildPool(allCards);
+    poolDataRef.current = newPool;
+    setPool(newPool);
+    totalRef.current = newPool.length;
     cardsElRef.current = [];
     versionRef.current += 1;
     setPoolVersion((v) => v + 1);
-    preloadBatch(pool);
+    preloadBatch(newPool);
   }, [mounted, allCards, preloadBatch]);
 
   const switchCategory = useCallback((cat: string) => {
     userInteractedRef.current = true;
     const source = cat === "All" ? allCards : allCards.filter((c) => c.label === cat);
-    const pool = buildPool(source);
-    poolDataRef.current = pool;
-    totalRef.current = pool.length;
+    const newPool = buildPool(source);
+    poolDataRef.current = newPool;
+    setPool(newPool);
+    totalRef.current = newPool.length;
     scrollRef.current = 0;
     smoothRef.current = 0;
     cardsElRef.current = [];
     versionRef.current += 1;
     setPoolVersion((v) => v + 1);
     setActiveCategory(cat);
-    preloadBatch(pool);
+    preloadBatch(newPool);
   }, [allCards, preloadBatch]);
 
   useEffect(() => {
@@ -187,7 +191,7 @@ export default function DepthBlurCarousel() {
         const el = els[i];
         if (!el) continue;
 
-        let linearBase = i - smoothRef.current;
+        const linearBase = i - smoothRef.current;
         let mapped = ((linearBase % total) + total) % total;
         if (mapped > total / 2) mapped -= total;
 
@@ -245,7 +249,6 @@ export default function DepthBlurCarousel() {
     return <div style={{ width: "100%", height: 380, minHeight: 380 }} />;
   }
 
-  const pool = poolDataRef.current;
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   return (

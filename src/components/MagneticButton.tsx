@@ -2,8 +2,14 @@
 
 import { useRef, useCallback } from "react";
 
-export default function MagneticButton({ children, className = "", href, ...props }: { children: React.ReactNode; className?: string; href?: string; [key: string]: any }) {
-  const ref = useRef<HTMLAnchorElement | HTMLButtonElement>(null);
+interface MagneticButtonProps extends React.HTMLAttributes<HTMLElement> {
+  children: React.ReactNode;
+  className?: string;
+  href?: string;
+}
+
+export default function MagneticButton({ children, className = "", href, ...props }: MagneticButtonProps) {
+  const ref = useRef<HTMLAnchorElement & HTMLButtonElement>(null);
 
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     const el = ref.current;
@@ -20,12 +26,25 @@ export default function MagneticButton({ children, className = "", href, ...prop
     el.style.transform = "translate(0px, 0px)";
   }, []);
 
-  const Tag = href ? "a" : "button";
+  if (href) {
+    return (
+      <a
+        ref={ref}
+        href={href}
+        className={className}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{ transition: "transform 0.3s cubic-bezier(0.22, 1, 0.36, 1)", display: "inline-flex" }}
+        {...props}
+      >
+        {children}
+      </a>
+    );
+  }
 
   return (
-    <Tag
-      ref={ref as any}
-      href={href}
+    <button
+      ref={ref}
       className={className}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -33,6 +52,6 @@ export default function MagneticButton({ children, className = "", href, ...prop
       {...props}
     >
       {children}
-    </Tag>
+    </button>
   );
 }
