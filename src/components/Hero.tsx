@@ -76,22 +76,18 @@ export default function Hero() {
         {/* Left: Text */}
         <div className="flex-1 lg:flex-[1.2] text-center lg:text-left">
           {/* Main heading */}
-          <div className={`mb-5 md:mb-6 transition-all duration-1000 ${loaded ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: "1.0s" }}>
-            <div className="overflow-hidden">
-              <div style={{ transform: loaded ? "translateY(0)" : "translateY(100%)", transition: "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.0s" }}>
-                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-[1.2] tracking-tight text-[var(--color-ink)] whitespace-nowrap">
-                  Tags that hang right.
-                </h1>
-              </div>
-            </div>
-            <div className="overflow-hidden mt-0">
-              <div style={{ transform: loaded ? "translateY(0)" : "translateY(100%)", transition: "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.2s" }}>
-                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-[1.2] tracking-tight text-[var(--color-ink)] whitespace-nowrap">
-                  Labels that <span className="copper-text" style={{ filter: "drop-shadow(0 0 12px rgba(58,130,80,0.4)) drop-shadow(0 0 24px rgba(58,130,80,0.2))" }}>stay on</span>.
-                </h1>
-              </div>
-            </div>
-          </div>
+          <h1 className={`mb-5 md:mb-6 transition-all duration-1000 ${loaded ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: "1.0s" }}>
+            <span className="block overflow-hidden">
+              <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-[1.2] tracking-tight text-[var(--color-ink)] whitespace-nowrap" style={{ transform: loaded ? "translateY(0)" : "translateY(100%)", transition: "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.0s" }}>
+                Tags that hang right.
+              </span>
+            </span>
+            <span className="block overflow-hidden mt-0">
+              <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-[1.2] tracking-tight text-[var(--color-ink)] whitespace-nowrap" style={{ transform: loaded ? "translateY(0)" : "translateY(100%)", transition: "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.2s" }}>
+                Labels that <span className="copper-text" style={{ filter: "drop-shadow(0 0 12px rgba(58,130,80,0.4)) drop-shadow(0 0 24px rgba(58,130,80,0.2))" }}>stay on</span>.
+              </span>
+            </span>
+          </h1>
 
           {/* Rotating word */}
           <div className={`mb-5 md:mb-8 transition-all duration-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "1.4s" }}>
